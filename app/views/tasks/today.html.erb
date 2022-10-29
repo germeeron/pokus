@@ -1,0 +1,27 @@
+<%= render "html_header" %>
+
+<h1>Today's Tasks</h1>
+
+<% @today.each do |test| %>    
+    <p>
+        <strong>Category:</strong>
+        <%= test.category.title %>
+    </p>
+    <p>
+        <strong>Tasks:</strong>
+        <%= test.name %>
+    </p>
+
+    <p>
+        <strong>Details:</strong>
+        <%= test.notes %>
+    </p>
+
+    <p>
+        <strong>Deadline:</strong>
+        <%= test.due_date %>
+    </p>
+<% end %>
+            <a>
+                <%= link_to "Back", categories_path, class: "button is-link" %>
+            </a>

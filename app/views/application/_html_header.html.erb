@@ -1,0 +1,15 @@
+<div class="navBar">
+    <div class="websiteName">   
+        <%= link_to "pokus", categories_path %>
+    </div>
+    <div class="navLinks">
+        <% if user_signed_in? %>
+            <%= link_to current_user.email, edit_user_registration_path %>
+            <%= link_to "log out", destroy_user_session_path, method: :delete %>
+            <%= link_to "today", today_path %>
+        <% else %>
+            <%= link_to "sign up", new_user_registration_path %>
+            <%= link_to "log in", new_user_session_path %>
+        <% end %>
+    </div>
+</div>

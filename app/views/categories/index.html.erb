@@ -1,0 +1,20 @@
+<%= render "html_header" %>
+
+
+<h1>Categories</h1>
+
+    <% @categories.each do |category| %>
+        <div class="categoryContainer">
+                <%= link_to category.title, category %>
+                <%= link_to "Edit", edit_category_path(category) %>
+                <%= link_to "Delete", category_path(category),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+        </div>
+    <% end %>
+
+    <div class="categoryContainer">
+        <%= link_to "+", new_category_path %>
+    </div>
+
+    
