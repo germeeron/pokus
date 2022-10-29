@@ -5,15 +5,7 @@ class TasksController < ApplicationController
     # POST /categories
     def create
         @task = @category.tasks.create(task_params)
-        # redirect_to category_path(@category)
-
-        respond_to do |format|
-            if @task.save
-                format.html { redirect to @task.post }
-            else
-                format.html { render :new, status: :unprocessable_entity }
-            end
-        end
+        redirect_to category_path(@category)
     end
 
     # GET /categories/:id/edit
@@ -38,11 +30,11 @@ class TasksController < ApplicationController
         redirect_to category_path(@category)
     end
 
-    def today
-        @today = current_user.tasks.where(deadline: Date.current)
-    end
+    # def due_today
+    #    @due_today = current_user.tasks.where(deadline: Date.current)
+    # end
     
-    def due_today 
+    def today 
         @categories = current_user.categories
         @tasks = @categories.tasks
         @datetoday = Date.current
