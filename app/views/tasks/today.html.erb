@@ -1,27 +1,33 @@
 <%= render "html_header" %>
+<%= render "html_sidebar" %>
 
+<div class="mainContainer">
 <h1>Today's Tasks</h1>
 
-<% @today.each do |test| %>    
+<div>
+<% @today.each do |task| %>    
     <p>
         <strong>Category:</strong>
-        <%= test.category.title %>
+        <%= task.category.title %>
     </p>
     <p>
-        <strong>Tasks:</strong>
-        <%= test.name %>
-    </p>
-
-    <p>
-        <strong>Details:</strong>
-        <%= test.notes %>
+        <strong>Task name:</strong>
+        <%= task.name %>
     </p>
 
     <p>
-        <strong>Deadline:</strong>
-        <%= test.due_date %>
+        <strong>Notes:</strong>
+        <%= task.notes %>
+    </p>
+
+    <p>
+        <strong>Due Date:</strong>
+        <%= task.due_date %>
     </p>
 <% end %>
+</div>
+</div>
+
             <a>
                 <%= link_to "Back", categories_path, class: "button is-link" %>
             </a>

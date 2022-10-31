@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
     # DELETE /categories/:id
     def destroy
         # @category = Category.find(params[:id])
-
+        
         @category.destroy
 
         redirect_to root_path, status: :see_other

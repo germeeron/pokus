@@ -1,0 +1,33 @@
+.sideBar
+    {
+        position:           fixed;
+        left:               0;
+        bottom:             0;
+        top:                100px;
+        background:         transparent;
+        width:              180px;
+    }
+
+
+.sideLinks
+    {
+        background-color:   lightpink;
+        color:              red;
+        font-size:          30px;
+        font-weight:        bold;
+        display:            flex;
+        padding-left:       50px;
+        margin-top:         20px;
+        height:             45px;
+        align-items:        center;
+        border-top-right-radius: 10px;  
+        border-bottom-right-radius: 10px;  
+    }
+    
+.sideBar a:visited {
+    color:             red;
+    }
+
+.sideBar a:active {
+    color:              white;
+    }

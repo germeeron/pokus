@@ -1,19 +1,28 @@
-<%= form_with model: category do |f| %>
-    <p>
-        <% if category.errors.any? %>
-            <ul>
-                <% category.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
+<body>
+    <div class="formContainer">
+
+        <%= form_with model: category do |f| %>
+            <p>
+                <% if category.errors.any? %>
+                    <ul>
+                        <% category.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
                 <% end %>
-            </ul>
-        <% end %>
-    </p>
+            </p>
     
-    <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+            <div class="field">
+                <%= f.label :title %>
+                <%= f.text_field :title %>
+            </div>
+            <div class="actions">
+                <%= f.submit %>
+            </div>
+
+            <div class="smallLink">
+                <%= link_to "Back", :back %>
+            </div>
+        <% end %>
+    </div>
+</body> 

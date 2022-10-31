@@ -1,0 +1,13 @@
+<div class="sideBar">
+        <% if user_signed_in? %>
+            <div class="sideLinks">
+                <%= link_to "today", today_path %>
+            </div>
+            <div class="sideLinks">
+                <%= link_to "overdue", overdue_path %>
+            </div>
+            <div class="sideLinks">
+                <%= link_to "soon", today_path %>
+            </div>
+        <% end %>
+</div>

@@ -30,16 +30,23 @@ class TasksController < ApplicationController
         redirect_to category_path(@category)
     end
 
-    # def due_today
-    #    @due_today = current_user.tasks.where(deadline: Date.current)
-    # end
-    
-    def today 
-        @categories = current_user.categories
-        @tasks = @categories.tasks
-        @datetoday = Date.current
-        @today = @tasks.where('due_date = ?', @datetoday)
+    def today
+        @today = current_user.tasks.where(due_date: Date.current)
     end
+
+    def soon
+        @soon = current_user.tasks.where("due_date > ?", Date.current)
+    end
+
+    def overdue
+        @overdue = current_user.tasks.where("due_date < ?", Date.current)
+    end
+
+    #def complete
+    #    if @task.complete == true
+    #        @task.destroy
+    #    end
+    #end
 
     private
 

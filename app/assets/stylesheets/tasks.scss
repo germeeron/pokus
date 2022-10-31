@@ -1,3 +1,20 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.tasksContainer {
+    background-color: lightgoldenrodyellow;
+    height: 400px;
+    width: 400px;
+    margin: 20px;
+    font-size: 1em;
+    text-align: left;
+    color: #000;
+    background:#d8f9ff;
+    margin: auto;
+    display: block;
+    padding: 1em;
+    overflow: scroll;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    -moz-transition: -moz-transform 0.15s linear;
+    -o-transition: -o-transform 0.15s linear;
+    -webkit-transition: -webkit-transform 0.15s linear;
+}

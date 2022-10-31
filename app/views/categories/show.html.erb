@@ -1,14 +1,23 @@
 <%= render "html_header" %>
+<%= render "html_sidebar" %>
 
-<h1><%= @category.title %></h1>
+<div class="mainContainer">
 
-<%= link_to "Edit", edit_category_path(@category) %>
+    <div class="pageTitleContainer">
+        <div class="pageTitle"><%= @category.title %> tasks</div>
+    </div>
 
-
-<h2>Tasks</h2>
+    <div class="mainSubContainer">
  
-<%= render @category.tasks %>
+        <div class="tasksContainer">
+            <div class="tasks">
+                <%= render @tasks %>
+            </div>
+        </div>
 
-
-<h2>Add a task:</h2>
-<%= render "tasks/form", category: @category, task: @category.tasks.build %>
+        <div class="formContainer">
+            <div class="pageTitle">add task</div>
+            <%= render "tasks/form", category: @category, task: @category.tasks.build %>
+        </div>
+    </div>
+</div>

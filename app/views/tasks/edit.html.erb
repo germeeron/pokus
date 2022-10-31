@@ -1,5 +1,14 @@
 <%= render "html_header" %>
+<%= render "html_sidebar" %>
 
-<h1>Edit Task</h1>
+<div class="mainContainer">
+    
+    <div class="formContainer">
+        
+        <div class="pageTitle">edit task</div>
+    
+        <%= render "tasks/form", category: @category, task: @task %>
+    
+    </div>
 
-<%= render "tasks/form", category: @category, task: @task %>
+</div>
