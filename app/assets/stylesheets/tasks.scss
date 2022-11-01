@@ -1,9 +1,9 @@
 .tasksContainer {
     background-color: lightgoldenrodyellow;
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     margin: 20px;
-    font-size: 1em;
+    font-size: 0.5em;
     text-align: left;
     color: #000;
     background:#d8f9ff;
@@ -17,4 +17,57 @@
     -moz-transition: -moz-transform 0.15s linear;
     -o-transition: -o-transform 0.15s linear;
     -webkit-transition: -webkit-transform 0.15s linear;
+}
+
+.allTasks {
+    display: flex;
+    color: blue;
+}
+
+.leftInline {
+    display: flex;
+    flex: 2;
+    color: blue;
+    width: 200px;
+    font-size: 40px;
+}
+
+.rightInline {
+    display: flex;
+    flex: 1;
+    font-family: Arial;
+    font-size: 15px;
+    text-align: right;
+    align-items: center;
+    color: white;
+}
+
+.allTasks a {
+    color: #ffffff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.allTasks a:visited {
+    color: indigo;
+}
+
+.inline {
+    justify-content: end;
+    margin-right: 15px;
+}
+
+.taskDetails {
+    color: blue;
+    font-size: 30px;
+}
+
+.bottomLinks {
+    margin-top: 15px;
+}
+
+.exp {
+    background-color: red;
 }

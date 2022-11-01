@@ -1,0 +1,26 @@
+<%= render "html_header" %>
+<%= render "html_sidebar" %>
+
+<div class="mainContainer">
+
+    <div class="pageTitleContainer">
+        <div class="pageTitle">overdue tasks</div>
+    </div>
+
+    <div class="mainSubContainer">
+ 
+        <div class="tasksContainer">
+            <div class="tasks">
+                <% @overdue.each do |task| %>    
+                    <%= render "tasks/task_due", task: task %>    
+                <% end %>
+            </div>
+
+            <div class="smallLink">
+                <%= link_to "Back", :back %>
+            </div>
+        </div>
+        
+    </div>
+
+</div>

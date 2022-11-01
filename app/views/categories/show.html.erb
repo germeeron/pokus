@@ -13,6 +13,10 @@
             <div class="tasks">
                 <%= render @tasks %>
             </div>
+
+            <div class="smallLink">
+                <%= link_to "Back", :back %>
+            </div>
         </div>
 
         <div class="formContainer">
@@ -20,4 +24,5 @@
             <%= render "tasks/form", category: @category, task: @category.tasks.build %>
         </div>
     </div>
+
 </div>

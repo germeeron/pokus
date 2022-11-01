@@ -45,4 +45,14 @@ body {
     font-size: 12px;
     text-align: center;
     text-decoration: none;
+    bottom: 5px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#rightInline {
+    right: 10px;
+    align-items: right;
 }

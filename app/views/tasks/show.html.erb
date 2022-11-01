@@ -1,1 +1,22 @@
-<%= render "tasks/task", category: @category, task: @task %>
+<%= render "html_header" %>
+<%= render "html_sidebar" %>
+
+<div class="mainContainer">
+
+    <div class="pageTitleContainer">
+        <div class="pageTitle"><%= @task.name %></div>
+    </div>
+
+    <div class="mainSubContainer">
+ 
+        <div class="tasksContainer">
+            <div class="tasks">
+                <%= render "tasks/task_details", category: @category, task: @task %>
+            </div>
+            <div class="smallLink">
+                <%= link_to "Back", :back %>
+            </div>
+        </div>
+    </div>
+
+</div>

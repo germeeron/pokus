@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-    before_action :set_category, except: :today
+    before_action :set_category, except: %i[ today overdue soon ]
     before_action :set_task, only: %i[ show edit update destroy ]
 
     # POST /categories

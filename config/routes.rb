@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   # get "/today", to: "tasks#due_today"
-  get "tasks/task", to: "tasks#today", as: 'today'
-  get "tasks/task", to: "tasks#soon", as: 'soon'
-  get "tasks/task", to: "tasks#overdue", as: 'overdue'
+  get "tasks/today", to: "tasks#today", as: 'today'
+  get "tasks/overdue", to: "tasks#soon", as: 'soon'
+  get "tasks/soon", to: "tasks#overdue", as: 'overdue'
 end

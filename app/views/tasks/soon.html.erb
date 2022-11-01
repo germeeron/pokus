@@ -4,15 +4,15 @@
 <div class="mainContainer">
 
     <div class="pageTitleContainer">
-        <div class="pageTitle">tasks due today</div>
+        <div class="pageTitle">tasks due soon</div>
     </div>
 
     <div class="mainSubContainer">
  
         <div class="tasksContainer">
             <div class="tasks">
-                <% @today.each do |task| %>    
-                    <%= render "tasks/task_due", task: task %>
+                <% @soon.each do |task| %>    
+                    <%= render "tasks/task_due", task: task %>    
                 <% end %>
             </div>
 

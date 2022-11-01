@@ -12,19 +12,4 @@
             <%= task.name %>
         <% end %>
     </div>
-
-    <div class="rightInline">
-        <div class="inline">
-            <%= link_to "Show", category_task_path(@category, task) %>
-        </div>
-        <div class="inline">
-            <%= link_to "Edit", edit_category_task_path(@category, task) %>
-        </div>
-        <div class="inline">
-            <%= link_to "Delete", [ task.category, task ],
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-        </div>
-    </div>
-    
 </div>

@@ -1,0 +1,40 @@
+<div>
+        <div class="taskDetails">
+            <p>
+                <strong>Name:</strong>
+                <%= task.name %>
+            </p>
+        </div>
+        <div class="taskDetails">
+            <p>
+                <strong>Notes:</strong>
+                <%= task.notes %>
+            </p>
+        </div>
+        <div class="taskDetails">
+            <p>
+                <strong>Due Date:</strong>
+                <%= task.due_date %>
+            </p>
+        </div>
+        <div class="taskDetails">
+            <div class="inline">
+                <%= form_with class: "checkbox", model: [ task.category, task ] do |f| %>
+                    <%= f.check_box :complete, class: "checkbox", onchange: "this.form.submit();" %>
+                <% end %>
+            </div>
+            <div class="inline">
+                <strong>Complete</strong>
+            </div>
+        </div>
+    <div class="bottomLinks">
+        <div class="inline">
+            <%= link_to "Edit", edit_category_task_path(@category, task) %>
+        </div>
+        <div class="inline">
+            <%= link_to "Delete", [ task.category, task ],
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        </div>
+    </div>
+</div>

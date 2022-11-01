@@ -1,5 +1,5 @@
 .formContainer {
-    width: 30%;
+    width: 40%;
     background-color: #e1f7ff;
     color: #1170ff;
     margin: auto;
@@ -32,8 +32,14 @@
     font-size: 15px;
 }
 
-.registrationLink {
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
+.lower {
+    margin-top: 120px;
+}
+
+.higher {
+    margin-top: 10px;
+}
+
+.thinner {
+    width: 30%;
 }

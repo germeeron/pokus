@@ -1,3 +1,41 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    background: blue;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.websiteName {
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 100px;
+    align-items: center;
+    width: 100px;
+}
+
+.websiteName a:visited {
+    color: white;
+}
+
+.navLinks {
+    display: flex;
+    flex: 1;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-right: 50px;
+}
+
 .navLinks a {
     color: #ffffff;
 }
@@ -10,40 +48,14 @@ a:link {
     color: white;
 }
 
-.navBar
-    {
-        display:            flex;
-        background:         blue;
-        height:             50px;
-        position:           fixed;
-        top:                0;
-        left:               0;
-        right:              0;
-        border-color: blue 2px;
-    }
+.navLink1 {
+    display: flex;
+    flex: 2;
+    justify-content: end;
+    margin-right: 30px;
+}
 
-.websiteName
-    {
-        font-size:          30px;
-        font-weight:        bold;
-        padding-left:       100px;
-        display:            flex;
-        align-items:        center;
-    }
-
-.navLinks
-    {
-        font-family:        Arial;
-        font-size:          30px;
-        font-weight:        bold;
-        text-align:         right;
-        display:            flex;
-        align-items:        center;
-        padding-left:       400px;
-
-    }
-
-.navLinks
-    {
-        padding-left:       50px;
-    }
+.navLink2 {
+    display: flex;
+    width: 100px;
+}
