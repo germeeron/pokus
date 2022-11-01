@@ -52,7 +52,7 @@ body {
     display: inline-block;
 }
 
-#rightInline {
+.rightInline {
     right: 10px;
     align-items: right;
 }

@@ -6,10 +6,20 @@
                 <%= f.check_box :complete, class: "checkbox", onchange: "this.form.submit();" %>
             <% end %>
         </div>
+        <div class="inline">
+            <% if task.complete %>
+                <div style="color:white;"><s><%= task.name %></s></div>
+            <% else %>
+                <%= task.name %>
+            <% end %>
+        </div>        
+    </div>
+    
+    <div class="rightInline category">
         <% if task.complete %>
-            <s><%= task.name %></s>
+            <div style="color:white;"><s><%= task.category.title %></s></div>
         <% else %>
-            <%= task.name %>
+            <%= task.category.title %>
         <% end %>
     </div>
 </div>

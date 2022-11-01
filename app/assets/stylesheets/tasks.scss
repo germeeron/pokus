@@ -1,12 +1,11 @@
 .tasksContainer {
-    background-color: lightgoldenrodyellow;
+    background:#d0e7f5;
     height: 350px;
     width: 350px;
     margin: 20px;
     font-size: 0.5em;
     text-align: left;
     color: #000;
-    background:#d8f9ff;
     margin: auto;
     display: block;
     padding: 1em;
@@ -21,13 +20,13 @@
 
 .allTasks {
     display: flex;
-    color: blue;
+    color: #1170ff;
 }
 
 .leftInline {
     display: flex;
     flex: 2;
-    color: blue;
+    color: #1170ff;
     width: 200px;
     font-size: 40px;
 }
@@ -60,7 +59,7 @@ a:link {
 }
 
 .taskDetails {
-    color: blue;
+    color: #1170ff;
     font-size: 30px;
 }
 
@@ -68,6 +67,7 @@ a:link {
     margin-top: 15px;
 }
 
-.exp {
-    background-color: red;
+.category {
+    font-size: 20px;
+    color: #1170ff;
 }
