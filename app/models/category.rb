@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
     validates :title, presence: true
-    validates :title, uniqueness: { scope: :user,
-        message: "different users can have categories with the same name" }
+    validates :title, uniqueness: { scope: :user }
 
     # similar to attr_reader, attr_accessor, this call to has_many will create methods for us at runtime
     has_many :tasks, dependent: :destroy

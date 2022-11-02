@@ -1,7 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+first_category:
+  title: new18
+  user: germee
 
-two:
-  title: MyString
+second_category:
+  title: personal
+  user: germee

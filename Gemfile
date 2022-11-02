@@ -60,3 +60,5 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 
 gem 'devise'
+
+gem "spring", group: :development

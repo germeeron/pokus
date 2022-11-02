@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
     # POST /categories
     def create
-        @category = current_user.categories.new(category_params)
+        @category = current_user.categories.build(category_params)
 
         if @category.save
             redirect_to categories_path
