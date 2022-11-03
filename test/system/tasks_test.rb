@@ -9,7 +9,8 @@ class TasksTest < ApplicationSystemTestCase
   end
 
   test "creating a Task" do
-    visit category_tasks_url
+    visit categories_url
+    click_on @category.title
 
     fill_in "Name", with: "new task name"
     fill_in "Notes", with: "new task notes"
@@ -21,7 +22,7 @@ class TasksTest < ApplicationSystemTestCase
   end
 
   test "updating a Task" do
-    visit category_tasks_url
+    visit categories_url
     click_on "Edit", match: :first
 
     fill_in "Name", with: "updated name"
@@ -30,12 +31,11 @@ class TasksTest < ApplicationSystemTestCase
     fill_in "Complete", with: @task.complete
     click_on "Update Task"
 
-    assert_text "Task was successfully updated"
     assert_text "updated name"
   end
 
   test "showing a Task" do
-    visit category_task_url
+    visit categories_url
     click_on "Show", match: :first
 
     assert_text @task.name
@@ -45,15 +45,17 @@ class TasksTest < ApplicationSystemTestCase
   end
 
   test "destroying a Task" do
-    visit category_task_url
+    visit categories_url
+    click_on @category.title
+
     page.accept_confirm do
         click_on "Delete", match: :first
     end
 
-    assert_not(@task.name == nil)
-    assert_not(@task.notes == nil)
-    assert_not(@task.due_date == nil)
-    assert_not(@task.complete == nil)
+    assert(@task.name == nil)
+    assert(@task.notes == nil)
+    assert(@task.due_date == nil)
+    assert(@task.complete == nil)
   end
 
   test "marking a Task complete" do
