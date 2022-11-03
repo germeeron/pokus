@@ -6,11 +6,3 @@ first_task:
   due_date: 2022-11-01
   complete: false
   category: first_category
-
-
-second_task:
-  name: errand
-  notes: get stuff
-  due_date: 2022-11-02
-  complete: true
-  category: second_category

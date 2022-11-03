@@ -10,7 +10,7 @@
     <div class="mainSubContainer">
         <% @categories.each do |category| %>
             <div class="categoryContainer">
-                <%= link_to category.title, category %>
+                <%= link_to category.title, category, class: "category-name" %>
 
                 <div class="smallLinkContainer">
                     <div class="smallLink">

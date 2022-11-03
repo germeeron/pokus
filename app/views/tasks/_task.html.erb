@@ -15,15 +15,16 @@
 
     <div class="rightInline">
         <div class="inline">
-            <%= link_to "Show", category_task_path(@category, task) %>
+            <%= link_to "Show", category_task_path(@category, task), class:"show-task" %>
         </div>
         <div class="inline">
-            <%= link_to "Edit", edit_category_task_path(@category, task) %>
+            <%= link_to "Edit", edit_category_task_path(@category, task), class:"edit-task" %>
         </div>
         <div class="inline">
             <%= link_to "Delete", [ task.category, task ],
                 method: :delete,
-                data: { confirm: "Are you sure?" } %>
+                data: { confirm: "Are you sure?" },
+                class:"delete-task" %>
         </div>
     </div>
     

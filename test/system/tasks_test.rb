@@ -1,57 +1,55 @@
 require "application_system_test_case"
-
 class TasksTest < ApplicationSystemTestCase
   setup do
     @user = users(:germee)
     login_as(@user, '123456')
-    @category = categories(:first_category)
-    @task = @category.tasks(:first_task)
+    @task = tasks(:first_task)
   end
 
-  test "creating a Task" do
+  def login_as(user, password)
+    visit new_user_session_path
+    fill_in 'user_email', with: user.email
+    fill_in  'user_password', with: password
+    click_on 'Log in'
+  end
+
+  test "creating a new Task" do
     visit categories_url
-    click_on @category.title
-
-    fill_in "Name", with: "new task name"
-    fill_in "Notes", with: "new task notes"
-    fill_in "Due date", with: "new task due date"
-    fill_in "Complete", with: "false"
+    Capybara.page.find('.category-name').click
+    fill_in "task[name]", with: "first task"
+    fill_in "task[notes]", with: "first detail"
+    fill_in "task[due_date]", with: @task.due_date
     click_on "Create Task"
-
-    assert_text @task.name
+    assert_text "first task"
   end
 
   test "updating a Task" do
     visit categories_url
-    click_on "Edit", match: :first
-
-    fill_in "Name", with: "updated name"
-    fill_in "Notes", with: @task.notes
-    fill_in "Due date", with: @task.due_date
-    fill_in "Complete", with: @task.complete
+    Capybara.page.find('.category-name').click
+    Capybara.page.find('.edit-task').click
+    fill_in "task[name]", with: "updated name"
+    fill_in "task[notes]", with: @task.notes
+    fill_in "task[due_date]", with: @task.due_date
     click_on "Update Task"
-
     assert_text "updated name"
   end
 
   test "showing a Task" do
     visit categories_url
-    click_on "Show", match: :first
-
+    Capybara.page.find('.category-name').click
+    Capybara.page.find('.show-task').click
     assert_text @task.name
     assert_text @task.notes
     assert_text @task.due_date
-    assert_text @task.complete
   end
 
   test "destroying a Task" do
     visit categories_url
-    click_on @category.title
-
+    Capybara.page.find('.category-name').click
+    
     page.accept_confirm do
-        click_on "Delete", match: :first
+      Capybara.page.find('.delete-task').click
     end
-
     assert(@task.name == nil)
     assert(@task.notes == nil)
     assert(@task.due_date == nil)
@@ -59,8 +57,10 @@ class TasksTest < ApplicationSystemTestCase
   end
 
   test "marking a Task complete" do
-    visit category_tasks_url
+    visit categories_url
+    Capybara.page.find('.category-name').click
     page.check ""
+    
     assert(@task.complete == true)
   end
 end
