@@ -42,12 +42,6 @@ class TasksController < ApplicationController
         @overdue = current_user.tasks.where("due_date < ?", Date.current)
     end
 
-    #def complete
-    #    if @task.complete == true
-    #        @task.destroy
-    #    end
-    #end
-
     private
 
     def task_params

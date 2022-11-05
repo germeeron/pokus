@@ -3,6 +3,7 @@ class TasksTest < ApplicationSystemTestCase
   setup do
     @user = users(:germee)
     login_as(@user, '123456')
+    @category = categories(:first_category)
     @task = tasks(:first_task)
   end
 
@@ -13,22 +14,35 @@ class TasksTest < ApplicationSystemTestCase
     click_on 'Log in'
   end
 
+  test "creating a Category" do
+    visit categories_url
+    click_on @category.title
+
+    fill_in "Name", with: "new title"
+    fill_in "Notes", with: "new notes"
+    fill_in "Due date", with: "new due date"
+    click_on "Create Task"
+
+    assert_text @task.name
+end
+
   test "updating a Task" do
     visit categories_url
-    Capybara.page.find('.category-name').click
-    Capybara.page.find('.edit-task').click
-    fill_in "task[name]", with: "updated name"
-    fill_in "task[notes]", with: @task.notes
-    fill_in "task[due_date]", with: @task.due_date
+    click_on @category.title
+    click_on "Edit", match: :first
+
+    fill_in "Name", with: "updated task name"
+    fill_in "Notes", with: @task.notes
+    fill_in "Due date", with: @task.due_date
     click_on "Update Task"
 
-    assert_text "updated name"
+    assert_text "updated task name"
   end
 
   test "showing a Task" do
     visit categories_url
-    Capybara.page.find('.category-name').click
-    Capybara.page.find('.show-task').click
+    click_on @category.title
+    click_on "Show", match: :first
     
     assert_text @task.name
     assert_text @task.notes
@@ -37,22 +51,20 @@ class TasksTest < ApplicationSystemTestCase
 
   test "destroying a Task" do
     visit categories_url
-    Capybara.page.find('.category-name').click
+    click_on @category.title
     
     page.accept_confirm do
       click_on "Delete", match: :first
     end
 
-    assert_not(@task.name == nil)
-    assert_not(@task.notes == nil)
-    assert_not(@task.due_date == nil)
-    assert_not(@task.complete == nil)
+    assert_no_text @task.name
   end
 
- # test "marking a Task complete" do
- #   visit categories_url
- #   Capybara.page.find('.category-name').click
- #   page.check "", match: :first
+  test "marking a Task complete" do
+    visit categories_url
+    click_on @category.title
+    page.check "", match: :first
 
- #   assert(@task.complete == false)
+    assert_no_text "false"
+  end
 end
